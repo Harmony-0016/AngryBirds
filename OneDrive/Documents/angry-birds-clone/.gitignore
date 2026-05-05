@@ -1,0 +1,14 @@
+# Godot 4+ internal metadata
+.godot/
+
+# Export artifacts (the "results" of your work, not the source)
+*.exe
+*.zip
+*.pck
+*.apk
+*.ipa
+export_presets.cfg
+
+# OS-specific junk
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://biuvnidu1o0mn"]
+
+[ext_resource type="Script" uid="uid://2xviq61ce826" path="res://bird.gd" id="1_g5k2s"]
+[ext_resource type="Texture2D" uid="uid://ccdwewi1hhy3w" path="res://BIRD.png" id="2_crnqq"]
+[ext_resource type="Shader" uid="uid://conx424frd5i1" path="res://general.gdshader" id="2_j88tq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cchwj"]
+shader = ExtResource("2_j88tq")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 6.1450002918875
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_crnqq"]
+radius = 132.18547
+
+[node name="Bird" type="RigidBody2D" unique_id=1630051474 groups=["birds"]]
+freeze = true
+script = ExtResource("1_g5k2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=48228301]
+material = SubResource("ShaderMaterial_cchwj")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_crnqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=863556282]
+position = Vector2(1, -1)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_crnqq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1916486583]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dygbht4cw7gav"]
+
+[ext_resource type="Shader" uid="uid://conx424frd5i1" path="res://general.gdshader" id="1_xfwl5"]
+[ext_resource type="Texture2D" uid="uid://c1u6c833jgspy" path="res://Wooooood.png" id="2_xfwl5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5d32t"]
+shader = ExtResource("1_xfwl5")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qncar"]
+size = Vector2(282.75, 31)
+
+[node name="Wood" type="RigidBody2D" unique_id=140190368]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133191566 groups=["blocks"]]
+material = SubResource("ShaderMaterial_5d32t")
+position = Vector2(137, 2)
+scale = Vector2(0.3, 0.075)
+texture = ExtResource("2_xfwl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=414492608]
+position = Vector2(137.625, 4.5)
+shape = SubResource("RectangleShape2D_qncar")

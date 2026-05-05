@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://xtcgptyut67f"]
+
+[ext_resource type="Script" uid="uid://s2kn1kymjgre" path="res://pig.gd" id="1_rv4ua"]
+[ext_resource type="Shader" uid="uid://conx424frd5i1" path="res://general.gdshader" id="2_abgp3"]
+[ext_resource type="Texture2D" uid="uid://duqc7hdxrk01s" path="res://piggy.png" id="2_r2hyi"]
+[ext_resource type="AudioStream" uid="uid://35ijkvllhdfs" path="res://Pop_SFX.wav" id="3_r2hyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_crnqq"]
+radius = 132.63861
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bna2k"]
+shader = ExtResource("2_abgp3")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 6.1450002918875
+
+[node name="Pig" type="RigidBody2D" unique_id=1888265051 groups=["pigs"]]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_rv4ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1451688464]
+position = Vector2(0, -1)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_crnqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=985779108]
+material = SubResource("ShaderMaterial_bna2k")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_r2hyi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1408073686 groups=["pigs"]]
+stream = ExtResource("3_r2hyi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

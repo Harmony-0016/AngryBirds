@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://l8fkav8mr6el"]
+
+[ext_resource type="Texture2D" uid="uid://ccrx406o64ugj" path="res://Rocks.jpg" id="1_yh8r4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lv0v5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv0v5"]
+size = Vector2(1167.25, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh8r4"]
+size = Vector2(20, 613)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=487037515]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1122290823]
+material = SubResource("ShaderMaterial_lv0v5")
+position = Vector2(570, 630)
+shape = SubResource("RectangleShape2D_lv0v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=209298299]
+scale = Vector2(1.14, 0.105)
+texture = ExtResource("1_yh8r4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1676780817]
+position = Vector2(0, 296.5)
+shape = SubResource("RectangleShape2D_yh8r4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2" unique_id=181879113]
+rotation = 1.5707964
+scale = Vector2(0.6, 0.07)
+texture = ExtResource("1_yh8r4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1760538785]
+position = Vector2(1142, 306)
+shape = SubResource("RectangleShape2D_yh8r4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D3" unique_id=1202565626]
+rotation = 1.5707964
+scale = Vector2(0.6, 0.07)
+texture = ExtResource("1_yh8r4")

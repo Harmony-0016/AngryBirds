@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://du2msegd7fq6d"]
+
+[ext_resource type="PackedScene" uid="uid://biuvnidu1o0mn" path="res://bird.tscn" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://xtcgptyut67f" path="res://Pig.tscn" id="2_hbghi"]
+[ext_resource type="PackedScene" uid="uid://l8fkav8mr6el" path="res://ground.tscn" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://dygbht4cw7gav" path="res://block.tscn" id="4_ihfcg"]
+[ext_resource type="Script" uid="uid://cu13rs2p0vchw" path="res://label.gd" id="5_rka8t"]
+[ext_resource type="PackedScene" uid="uid://xtcgptyut67f" path="res://pig.tscn" id="6_5hph3"]
+
+[node name="Level 1" type="Node2D" unique_id=510470836]
+
+[node name="Ground" parent="." unique_id=487037515 instance=ExtResource("2_hn12h")]
+position = Vector2(1, -2)
+
+[node name="Pig" parent="." unique_id=1888265051 groups=["pigs"] instance=ExtResource("2_hbghi")]
+position = Vector2(537, 73)
+
+[node name="Bird" parent="." unique_id=1630051474 instance=ExtResource("1_hbghi")]
+position = Vector2(754, 52)
+
+[node name="Block" parent="." unique_id=140190368 groups=["blocks"] instance=ExtResource("4_ihfcg")]
+position = Vector2(389, 299)
+
+[node name="Block2" parent="." unique_id=1335242262 groups=["blocks"] instance=ExtResource("4_ihfcg")]
+position = Vector2(658, 322)
+rotation = 1.5707964
+
+[node name="Block3" parent="." unique_id=1985323056 groups=["blocks"] instance=ExtResource("4_ihfcg")]
+position = Vector2(405, 321)
+rotation = 1.5707964
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403963087]
+
+[node name="label" type="Label" parent="CanvasLayer" unique_id=2015466317]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "You Won!"
+script = ExtResource("5_rka8t")
+
+[node name="Pig2" parent="." unique_id=2060314219 instance=ExtResource("6_5hph3")]
+position = Vector2(189, 479)
